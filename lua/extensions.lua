@@ -16,11 +16,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Autocommand that reloads neovim whenever you save the extensions.lua file 
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost extensions.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -49,22 +49,23 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
   -- Lua Development
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "nvim-lua/popup.nvim"
-  use "christianchiarulli/lua-dev.nvim"
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim, coc.nvim also used it
+  use "christianchiarulli/lua-dev.nvim" -- Useful lua functions used by lots of plugins
   -- use "folke/lua-dev.nvim"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
+  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer, but not update, mason is the iterative product
+  use "williamboman/mason.nvim" -- the same author. like cocnvim, unified multiple functions 
+  use "williamboman/mason-lspconfig.nvim" -- simple install lsp server like nvim-lsp-installer using mason
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "ray-x/lsp_signature.nvim"
-  use "SmiteshP/nvim-navic"
-  use "simrat39/symbols-outline.nvim"
-  use "b0o/SchemaStore.nvim"
+  use "ray-x/lsp_signature.nvim" -- lsp support plugin. The list of parameters to be continued is displayed below the input.
+  use "SmiteshP/nvim-navic" -- support lualine, show current code environment
+  use "simrat39/symbols-outline.nvim" -- subsitute for tagbar
+  use "b0o/SchemaStore.nvim" -- used for SchemaStore
   -- use "github/copilot.vim"
+  --[[
   use {
     "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
@@ -74,24 +75,27 @@ return packer.startup(function(use)
       end, 100)
     end,
   }
-  use "RRethy/vim-illuminate"
-  use "j-hui/fidget.nvim"
-  use "lvimuser/lsp-inlayhints.nvim"
+  --]]
+  use "RRethy/vim-illuminate" -- hightlight current word
+  use "j-hui/fidget.nvim" -- support for nvim-lsp
+  -- use "lvimuser/lsp-inlayhints.nvim"
   -- use "simrat39/inlay-hints.nvim"
-  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- diagnostics like rust debug, cool!!!
 
   -- Completion
-  use "christianchiarulli/nvim-cmp"
+  use "christianchiarulli/nvim-cmp" -- copy from hrsh7th
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-nvim-lsp" -- 统合不同的代码补全能力, 如snippest或lsp
+  use "hrsh7th/cmp-emoji" 
   use "hrsh7th/cmp-nvim-lua"
-  use "zbirenbaum/copilot-cmp"
+  -- use "zbirenbaum/copilot-cmp"
+  --[[
   use { "tzachar/cmp-tabnine", commit = "1a8fd2795e4317fd564da269cc64a2fa17ee854e", 
 run = "./install.sh" }
+	--]]
 
   -- Snippet
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -107,10 +111,12 @@ run = "./install.sh" }
   -- use "wellle/targets.vim"
   -- use "RRethy/nvim-treesitter-textsubjects"
   use "kylechui/nvim-surround"
+  --[[
   use {
     "abecodes/tabout.nvim",
     wants = { "nvim-treesitter" }, -- or require if not used so far
   }
+  --]]
 
   -- Marks
   use "christianchiarulli/harpoon"
@@ -122,7 +128,7 @@ run = "./install.sh" }
   use "tom-anders/telescope-vim-bookmarks.nvim"
 
   -- Note Taking
-  use "mickael-menu/zk-nvim"
+  -- use "mickael-menu/zk-nvim"
 
   -- Color
   use "NvChad/nvim-colorizer.lua"
@@ -137,7 +143,7 @@ run = "./install.sh" }
   -- Utility
   use "rcarriga/nvim-notify"
   use "stevearc/dressing.nvim"
-  use "ghillb/cybu.nvim"
+  -- use "ghillb/cybu.nvim"
   use "moll/vim-bbye"
   use "lewis6991/impatient.nvim"
   use "lalitmee/browse.nvim"
@@ -159,10 +165,10 @@ run = "./install.sh" }
   -- use "tiagovla/scope.nvim"
 
   -- Statusline
-  use "christianchiarulli/lualine.nvim"
+  use "christianchiarulli/lualine.nvim" -- Statusline
 
   -- Startup
-  use "goolord/alpha-nvim"
+  use "goolord/alpha-nvim" -- substitute for dashboard-nvim
 
   -- Indent
   use "lukas-reineke/indent-blankline.nvim"
@@ -172,19 +178,19 @@ run = "./install.sh" }
   use "christianchiarulli/lir.nvim"
 
   -- Comment
-  use "numToStr/Comment.nvim"
+  -- use "numToStr/Comment.nvim"
   use "folke/todo-comments.nvim"
 
   -- Terminal
   use "akinsho/toggleterm.nvim"
 
   -- Project
-  use "ahmedkhalf/project.nvim"
-  use "windwp/nvim-spectre"
+  -- use "ahmedkhalf/project.nvim"
+  use "nvim-pack/nvim-spectre"
 
   -- Session
-  use {"rmagatti/auto-session", branch="dir-changed-fixes"}
-  use "rmagatti/session-lens"
+  -- use {"rmagatti/auto-session", branch="dir-changed-fixes"}
+  -- use "rmagatti/session-lens"
 
   -- Quickfix
   use "kevinhwang91/nvim-bqf"
@@ -198,33 +204,33 @@ run = "./install.sh" }
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  use "f-person/git-blame.nvim"
-  use "ruifm/gitlinker.nvim"
-  use "mattn/vim-gist"
-  use "mattn/webapi-vim"
+  -- use "f-person/git-blame.nvim"
+  -- use "ruifm/gitlinker.nvim"
+  -- use "mattn/vim-gist"
+  -- use "mattn/webapi-vim"
 
   -- Github
-  use "pwntester/octo.nvim"
+  -- use "pwntester/octo.nvim"
 
   -- Editing Support
   use "windwp/nvim-autopairs"
-  use "monaqa/dial.nvim"
-  use "nacro90/numb.nvim"
+  -- use "monaqa/dial.nvim"
+  -- use "nacro90/numb.nvim"
   use "andymass/vim-matchup"
   use "folke/zen-mode.nvim"
   -- use "Pocco81/true-zen.nvim"
   use "karb94/neoscroll.nvim"
-  use "junegunn/vim-slash"
+  -- use "junegunn/vim-slash"
 
   -- Motion
-  use "phaazon/hop.nvim"
+  -- use "phaazon/hop.nvim"
   -- use "jinh0/eyeliner.nvim"
 
   -- Keybinding
   use "folke/which-key.nvim"
 
   -- Java
-  use "mfussenegger/nvim-jdtls"
+  -- use "mfussenegger/nvim-jdtls"
 
   -- Rust
   use { "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" }
