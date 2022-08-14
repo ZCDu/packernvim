@@ -18,13 +18,22 @@ null_ls.setup {
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
-    formatting.stylua,
-    formatting.shfmt,
-    formatting.google_java_format,
+    -- formatting.stylua,
+    -- formatting.shfmt,
+    -- formatting.google_java_format,
     -- diagnostics.flake8,
-    diagnostics.shellcheck,
+    -- diagnostics.shellcheck,
   },
 }
+--[[
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.stylua,
+        require("null-ls").builtins.diagnostics.eslint,
+        require("null-ls").builtins.completion.spell,
+    },
+})
+--]]
 
 local unwrap = {
   method = null_ls.methods.DIAGNOSTICS,

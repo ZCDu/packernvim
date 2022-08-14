@@ -8,10 +8,12 @@ if not snip_status_ok then
   return
 end
 
+--[[
 local tabnine_status_ok, _ = pcall(require, "user.tabnine")
 if not tabnine_status_ok then
   return
 end
+--]]
 
 local buffer_fts = {
   "markdown",
@@ -174,8 +176,10 @@ cmp.setup {
       return vim_item
     end,
   },
+  -- at the same time, Determines the order of CMP display
   sources = {
     { name = "crates", group_index = 1 },
+    --[[
     {
       name = "copilot",
       -- keyword_length = 0,
@@ -186,6 +190,7 @@ cmp.setup {
 
       group_index = 2,
     },
+    --]]
     {
       name = "nvim_lsp",
       filter = function(entry, ctx)
@@ -211,7 +216,7 @@ cmp.setup {
         end
       end,
     },
-    { name = "cmp_tabnine", group_index = 2 },
+    --{ name = "cmp_tabnine", group_index = 2 },
     { name = "path", group_index = 2 },
     { name = "emoji", group_index = 2 },
     { name = "lab.quick_data", keyword_length = 4, group_index = 2 },
