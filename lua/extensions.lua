@@ -121,6 +121,7 @@ run = "./install.sh" }
   -- Marks
   use "christianchiarulli/harpoon"
   use "MattesGroeger/vim-bookmarks"
+  use "lfv89/vim-interestingwords"
 
   -- Fuzzy Finder/Telescope
   use "nvim-telescope/telescope.nvim"
@@ -191,6 +192,7 @@ run = "./install.sh" }
   -- Session
   -- use {"rmagatti/auto-session", branch="dir-changed-fixes"}
   -- use "rmagatti/session-lens"
+  use "Shatur/neovim-session-manager"
 
   -- Quickfix
   use "kevinhwang91/nvim-bqf"

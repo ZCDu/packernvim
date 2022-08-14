@@ -2,6 +2,7 @@ M = {}
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
+local nopts = { noremap = true}
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -13,6 +14,9 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- Remove default map
+keymap("n", "s", "", {})
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -23,41 +27,47 @@ keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<m-h>", "<C-w>h", opts)
-keymap("n", "<m-j>", "<C-w>j", opts)
-keymap("n", "<m-k>", "<C-w>k", opts)
-keymap("n", "<m-l>", "<C-w>l", opts)
-keymap("n", "<m-tab>", "<c-6>", opts)
+keymap("n", "<leader>w", "<C-w>w", nopts)
+keymap("n", "<leader>k", "<C-w>k", nopts)
+keymap("n", "<leader>j", "<C-w>j", nopts)
+keymap("n", "<leader>h", "<C-w>h", nopts)
+keymap("n", "<leader>l", "<C-w>l", nopts)
+-- keymap("n", "<m-tab>", "<c-6>", opts)
+-- Place the two screens up and down
+keymap("n", "sh", "<C-w>t<C-w>K", opts)
+-- Place the two screens side by side
+keymap("n", "sv", "<C-w>t<C-w>H", opts)
+-- Rotate screens
+keymap("n","srh", "<C-w>b<C-w>K", nopts)
+keymap("n","srv", "<C-w>b<C-w>H", nopts)
+-- split screens
+keymap("n", "su", "set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", nopts)
+
+-- Indentation --
+keymap("n", ">", ">>", nopts)
+keymap("n", "<", "<<", nopts)
 
 -- Tabs --
 keymap("n", "<m-t>", ":tabnew %<cr>", opts)
 keymap("n", "<m-y>", ":tabclose<cr>", opts)
 keymap("n", "<m-\\>", ":tabonly<cr>", opts)
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- I hate typing these
--- keymap("n", "H", "^", opts)
--- keymap("n", "L", "$", opts)
--- keymap("v", "H", "^", opts)
--- keymap("v", "L", "$", opts)
--- keymap("x", "H", "^", opts)
--- keymap("x", "L", "$", opts)
--- keymap("o", "H", "^", opts)
--- keymap("o", "L", "$", opts)
+-- Resize splits with arrow keys
+keymap("n", "<C-Up>", ":resize +5<CR>", nopts)
+keymap("n", "<C-Down>", ":resize -5<CR>", nopts)
+keymap("n", "<C-Left>", ":vertical resize -5<CR>", nopts)
+keymap("n", "<C-Right>", ":vertical resize +5<CR>", nopts)
 
--- keymap("n", "n", "nzzzv", opts)
--- keymap("n", "N", "Nzzzv", opts)
+-- Copy to system clipboard
+keymap("v", "Y", '"+y', nopts)
+keymap("v", "P", '"+p', nopts)
 
 -- Naviagate buffers
--- keymap("n", "<S-l>", ":bnext<CR>", opts)
--- keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>b", ":bnext<CR>", opts)
+keymap("n", "<leader>v", ":bprevious<CR>", opts)
+keymap("n", "<leader>d", ":bdelete<CR>", opts)
 
--- keymap("n", "<RightMouse>", ":Alpha<CR>", opts)
 
 -- Move text up and down
 -- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -69,8 +79,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+-- keymap("v", "<", "<gv", opts)
+-- keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
 -- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
