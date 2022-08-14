@@ -9,7 +9,7 @@ local options = {
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "a",                             -- allow the mouse to be used in neovim
   pumheight = 10,                          -- pop up menu height
-  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
+  showmode = true,                         -- we don't need to see things like -- INSERT -- anymore
   showtabline = 0,                         -- always show tabs
   smartcase = true,                        -- smart case
   smartindent = true,                      -- make indenting smarter again
@@ -57,9 +57,12 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
+-- vim.cmd "set whichwrap+=<,>,[,],h,l" -- when at the border, shift will be up or down
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+-- Auto change directory to current dir
+vim.cmd [[autocmd BufEnter * silent! lcd %:p:h]]
 
 
 vim.filetype.add {

@@ -15,7 +15,7 @@ keymap("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Remove default map
-keymap("n", "s", "", {})
+keymap("n", "s", "<nop>", {})
 
 -- Modes
 --   normal_mode = "n",
@@ -41,7 +41,13 @@ keymap("n", "sv", "<C-w>t<C-w>H", opts)
 keymap("n","srh", "<C-w>b<C-w>K", nopts)
 keymap("n","srv", "<C-w>b<C-w>H", nopts)
 -- split screens
-keymap("n", "su", "set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", nopts)
+keymap("n", "su", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", {})
+keymap("n", "se", ":set splitbelow<CR>:split<CR>", {})
+-- Resize splits with arrow keys
+keymap("n", "<C-Up>", ":resize +5<CR>", nopts)
+keymap("n", "<C-Down>", ":resize -5<CR>", nopts)
+keymap("n", "<C-Left>", ":vertical resize -5<CR>", nopts)
+keymap("n", "<C-Right>", ":vertical resize +5<CR>", nopts)
 
 -- Indentation --
 keymap("n", ">", ">>", nopts)
@@ -53,25 +59,15 @@ keymap("n", "<m-y>", ":tabclose<cr>", opts)
 keymap("n", "<m-\\>", ":tabonly<cr>", opts)
 
 
--- Resize splits with arrow keys
-keymap("n", "<C-Up>", ":resize +5<CR>", nopts)
-keymap("n", "<C-Down>", ":resize -5<CR>", nopts)
-keymap("n", "<C-Left>", ":vertical resize -5<CR>", nopts)
-keymap("n", "<C-Right>", ":vertical resize +5<CR>", nopts)
-
--- Copy to system clipboard
+-- Copy to system clipboard -- 
 keymap("v", "Y", '"+y', nopts)
 keymap("v", "P", '"+p', nopts)
 
--- Naviagate buffers
+-- Naviagate buffers -- 
 keymap("n", "<leader>b", ":bnext<CR>", opts)
 keymap("n", "<leader>v", ":bprevious<CR>", opts)
 keymap("n", "<leader>d", ":bdelete<CR>", opts)
 
-
--- Move text up and down
--- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
--- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -85,7 +81,7 @@ keymap("n", "<leader>d", ":bdelete<CR>", opts)
 -- Move text up and down
 -- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 -- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- keymap("v", "p", '"_dP', opts)
 -- keymap("v", "P", '"_dP', opts)
 
 -- Visual Block --
