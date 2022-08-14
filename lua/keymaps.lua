@@ -43,6 +43,8 @@ keymap("n","srv", "<C-w>b<C-w>H", nopts)
 -- split screens
 keymap("n", "su", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", {})
 keymap("n", "se", ":set splitbelow<CR>:split<CR>", {})
+keymap("n", "si", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", {})
+keymap("n", "sn", ":set splitright<CR>:vsplit<CR>", {})
 -- Resize splits with arrow keys
 keymap("n", "<C-Up>", ":resize +5<CR>", nopts)
 keymap("n", "<C-Down>", ":resize -5<CR>", nopts)
@@ -103,16 +105,9 @@ keymap("n", "<leader>d", ":bdelete<CR>", opts)
 -- NOTE: the fact that tab and ctrl-i are the same is stupid
 -- keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
-keymap("n", "<F3>", ":e .<cr>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
-keymap(
-  "n",
-  "<F6>",
-  [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]],
-  opts
-)
+
 keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
 keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
 keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
@@ -121,17 +116,16 @@ keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 keymap("n", "<C-p>", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 -- keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
-keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
+keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts) 
 
-keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts)
+keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts) -- get a float terminal, but have a error
 -- keymap("n", "<C-\\>", "<cmd>vsplit<cr>", opts)
 -- vim.cmd[[nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]
 -- vim.cmd[[nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]
 -- keymap("n", "c*", [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]], opts)
 -- keymap("n", "c#", [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]], opts)
 -- keymap("n", "gx", [[:execute '!brave ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
-keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts) -- quick browse the selected web
 -- Change '<CR>' to whatever shortcut you like :)
 -- vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<cr>", { noremap = true, silent = true, nowait = true })
