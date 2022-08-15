@@ -111,10 +111,7 @@ local m_mappings = {
 local mappings = {
   -- ["1"] = "which_key_ignore",
   a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
-  b = { "<cmd>Telescope buffers<cr>", "Buffers" },
   e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  v = { "<cmd>vsplit<cr>", "vsplit" },
-  h = { "<cmd>split<cr>", "split" },
   w = { "<cmd>w<CR>", "Write" },
   -- h = { "<cmd>nohlsearch<CR>", "No HL" },
   q = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" },
@@ -368,6 +365,6 @@ local vmappings = {
 }
 
 which_key.setup(setup)
-which_key.register(mappings, opts)
+which_key.register(mappings, opts) -- different opts use different leader key
 which_key.register(vmappings, vopts)
 which_key.register(m_mappings, m_opts)

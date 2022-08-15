@@ -16,6 +16,8 @@ keymap("n", "<C-i>", "<C-i>", opts)
 
 -- Remove default map
 keymap("n", "s", "<nop>", {})
+keymap("n", "K", "<nop>", {})
+keymap("n", "J", "<nop>", {})
 
 -- Modes
 --   normal_mode = "n",
@@ -127,7 +129,9 @@ keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts) -- get a float te
 -- keymap("n", "c*", [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]], opts)
 -- keymap("n", "c#", [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]], opts)
 -- keymap("n", "gx", [[:execute '!brave ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+-- Browser --
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts) -- quick browse the selected web
+
 -- Change '<CR>' to whatever shortcut you like :)
 -- vim.api.nvim_set_keymap("n", "<CR>", "<cmd>NeoZoomToggle<CR>", { noremap = true, silent = true, nowait = true })
 vim.api.nvim_set_keymap("n", "=", "<cmd>JABSOpen<cr>", { noremap = true, silent = true, nowait = true })
@@ -205,6 +209,6 @@ vim.cmd [[
 ]]
 
 keymap("n", "<m-q>", ":call QuickFixToggle()<cr>", opts)
-keymap("n", "<c-l>", "<cmd>lua vim.lsp.codelens.run()<cr>", opts)
+-- keymap("n", "<c-l>", "<cmd>lua vim.lsp.codelens.run()<cr>", opts)
 
 return M

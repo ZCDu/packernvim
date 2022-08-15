@@ -10,3 +10,15 @@ Show file context at top-left, It needs to confirm whether the icon is displayed
 ## nvim-lspconfig
 ### button setting
 Its configuration is similar to coc.nvim . All of these configurations are in lsp/handlers.lua
+
+## nvim-tree
+All the icons are from plugin nvim-web-devicons. 
+### diagnostics
+nvim-tree also can show file status(hint, info, warning, error) with diagnostics.
+
+## bufferline
+Provides viewing of cache pool information.
+bufferline is depend on nvim-web-devicons and vim-bbye(Improve the comfort of use.)
+
+## whichkey
+A series of comprehensive shortcut keys are set to distinguish and guide with different opts settings(opts, vopts, m_opts).
