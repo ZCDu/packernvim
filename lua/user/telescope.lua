@@ -109,9 +109,9 @@ telescope.setup {
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
-        ["<C-b>"] = actions.results_scrolling_up,
-        ["<C-f>"] = actions.results_scrolling_down,
+        -- ["<C-t>"] = actions.select_tab,
+        -- ["<C-b>"] = actions.results_scrolling_up,
+        -- ["<C-f>"] = actions.results_scrolling_down,
 
         ["<Tab>"] = actions.close,
         ["<S-Tab>"] = actions.close,
