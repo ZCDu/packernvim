@@ -121,7 +121,7 @@ nvim_tree.setup {
     ignore = true,
     timeout = 500,
   },
-  view = {
+  view = { -- 视图配置
     width = 30,
     height = 30,
     hide_root_folder = false,

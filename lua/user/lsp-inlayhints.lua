@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
---[[ for neovim version > 0.8
+--for neovim version > 0.8
 local group = vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
 vim.api.nvim_create_autocmd("LspAttach", {
   group = "LspAttach_inlayhints",
@@ -16,8 +16,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     require("lsp-inlayhints").on_attach(args.buf, client)
   end,
 })
---]]
-require("lsp-inlayhints").on_attach(bufnr, client)
+
+-- require("lsp-inlayhints").on_attach(bufnr, client)
 
 hints.setup {
   inlay_hints = {

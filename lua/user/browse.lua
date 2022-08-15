@@ -8,13 +8,11 @@ browse.setup {
 }
 
 local bookmarks = {
-  "https://www.chrisatmachine.com/",
+  "https://www.baidu.com/",
   "https://github.com/christianchiarulli",
   "https://github.com/rockerBOO/awesome-neovim",
-  "https://signin.aws.amazon.com/signin",
   "https://doc.rust-lang.org/book/",
   "https://aur.archlinux.org/packages/",
-  "https://news.ycombinator.com/",
   -- "https://github.com/neovim/neovim",
   -- "https://neovim.discourse.group/",
 }
@@ -52,5 +50,5 @@ local opts = { noremap = true, silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
-keymap("n", "<m-o>", "<cmd>BrowseBookmarks<cr>", opts)
-keymap("n", "<m-i>", "<cmd>BrowseInputSearch<cr>", opts)
+keymap("n", "bb", "<cmd>BrowseBookmarks<cr>", opts)
+keymap("n", "bi", "<cmd>BrowseInputSearch<cr>", opts)

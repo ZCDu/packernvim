@@ -27,11 +27,11 @@ keymap("n", "s", "<nop>", {})
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<leader>w", "<C-w>w", nopts)
-keymap("n", "<leader>k", "<C-w>k", nopts)
-keymap("n", "<leader>j", "<C-w>j", nopts)
-keymap("n", "<leader>h", "<C-w>h", nopts)
-keymap("n", "<leader>l", "<C-w>l", nopts)
+keymap("n", "<C-w>", "<C-w>w", nopts)
+keymap("n", "<C-k>", "<C-w>k", nopts)
+keymap("n", "<C-j>", "<C-w>j", nopts)
+keymap("n", "<C-h>", "<C-w>h", nopts)
+keymap("n", "<C-l>", "<C-w>l", nopts)
 -- keymap("n", "<m-tab>", "<c-6>", opts)
 -- Place the two screens up and down
 keymap("n", "sh", "<C-w>t<C-w>K", opts)
@@ -68,7 +68,9 @@ keymap("v", "P", '"+p', nopts)
 -- Naviagate buffers -- 
 keymap("n", "<leader>b", ":bnext<CR>", opts)
 keymap("n", "<leader>v", ":bprevious<CR>", opts)
-keymap("n", "<leader>d", ":bdelete<CR>", opts)
+keymap("n", "<leader>d", ":Bdelete<CR>", opts)
+-- bdelete will produce some errors, so, there use Bdelte. 
+-- Neovim distinguishes the functions of Bdelete and bdelete, former delte one buffer, latter will attempt to delete all cause error.
 
 
 -- Insert --
@@ -151,24 +153,28 @@ vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentati
 
 -- vim.api.nvim_set_keymap("n", "<m-b>", "<cmd>lua require('user.bfs').open()<cr>", opts)
 -- vim.api.nvim_set_keymap("n", "<m-b>", "<cmd>JABSOpen<cr>", opts)
--- vim.api.nvim_set_keymap("n", "<m-e>", "NvimTreeToggle<cr>", opts)
+
+-- Nvim-tree -- 
+vim.api.nvim_set_keymap("", "<C-n>", ":NvimTreeToggle<cr>", {})
+
+
+-- Comment -- 
+keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
+
+-- Telescope -- 
 -- vim.api.nvim_set_keymap(
 --   "n",
 --   "<m-f>",
 --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 --   opts
 -- )
--- Comment
-keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
-
 -- vim.api.nvim_set_keymap(
 --   "n",
 --   "<tab>",
 --   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 --   opts
 -- )
-
 -- vim.api.nvim_set_keymap("n", "<tab>", "<cmd>lua require('telescope.builtin').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>", opts)
 
 vim.api.nvim_set_keymap(

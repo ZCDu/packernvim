@@ -7,6 +7,8 @@ local icons = require "user.icons"
 
 
 navic.setup {
+  -- select the items which work
+  --[[
   icons = {
     File = ' ',
     Module = ' ',
@@ -34,7 +36,35 @@ navic.setup {
     Event = ' ',
     Operator = ' ',
     TypeParameter = ' '
-
+  },
+  --]]
+  icons = {
+    File = "",
+    Module = "",
+    Namespace = "",
+    Package = "",
+    Class = "",
+    Method = "",
+    Property = "",
+    Field = "",
+    Constructor = "",
+    Enum = "",
+    Interface = "",
+    Function = "",
+    Variable = "",
+    Constant = "",
+    String = "",
+    Number = "",
+    Boolean = "蘒",
+    Array = "",
+    Object = "",
+    Key = "",
+    Null = "ﳠ",
+    EnumMember = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = "",
   },
   highlight = true,
   separator = " " .. icons.ui.ChevronRight .. " ",

@@ -78,7 +78,7 @@ return packer.startup(function(use)
   --]]
   use "RRethy/vim-illuminate" -- hightlight current word
   use "j-hui/fidget.nvim" -- support for nvim-lsp
-  -- use "lvimuser/lsp-inlayhints.nvim"
+  use "lvimuser/lsp-inlayhints.nvim"
   -- use "simrat39/inlay-hints.nvim"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- diagnostics like rust debug, cool!!!
 
@@ -162,7 +162,7 @@ run = "./install.sh" }
   -- use "Pocco81/DAPInstall.nvim"
 
   -- Tabline
-  -- use "akinsho/bufferline.nvim"
+  use "akinsho/bufferline.nvim"
   -- use "tiagovla/scope.nvim"
 
   -- Statusline
