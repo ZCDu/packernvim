@@ -120,8 +120,8 @@ keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
 
--- keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts) --treesitter提供的好用功能
-keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
+keymap("n", "<F8>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts) --treesitter提供的好用功能
+-- keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts) -- 显示编译的树结构，看不懂
 keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)

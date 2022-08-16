@@ -62,7 +62,11 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "ray-x/lsp_signature.nvim" -- lsp support plugin. The list of parameters to be continued is displayed below the input.
   use "SmiteshP/nvim-navic" -- support lualine, show current code environment
-  use "simrat39/symbols-outline.nvim" -- subsitute for tagbar
+  -- outline 
+  use {"simrat39/symbols-outline.nvim", commit = "65742f3b9306bd6167e3e8561504932a0e3189ee"} -- subsitute for tagbar
+  -- use "liuchengxu/vista.vim" -- above is not work
+  -- use "stevearc/aerial.nvim"
+
   use "b0o/SchemaStore.nvim" -- used for SchemaStore
   -- use "github/copilot.vim"
   --[[

@@ -31,3 +31,6 @@ There are some interesting functions which can be found at null-ls/builtins:
 3. diagnostics
 4. formatting
 5. hover 悬停显示功能
+
+# symbol-outline 
+It cannot work, but vista is also not work well. So wait for it repair!!
