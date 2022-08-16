@@ -62,6 +62,14 @@ keymap("n", "<m-t>", ":tabnew %<cr>", opts)
 keymap("n", "<m-y>", ":tabclose<cr>", opts)
 keymap("n", "<m-\\>", ":tabonly<cr>", opts)
 
+-- vim-bookmarks --
+keymap("n", "mi", ":BookmarkAnnotate<cr>", {})
+keymap("n", "ma", ":BookmarkShowAll<cr>", {})
+keymap("n", "mc", ":BookmarkClear<cr>", {})
+keymap("n", "mx", ":BookmarkClearAll<cr>", {})
+keymap("n", "mm", ":BookmarkToggle<cr>", {})
+keymap("n", "mn", ":BookmarkNext<cr>", {})
+keymap("n", "mN", ":BookmarkPrev<cr>", {})
 
 -- Copy to system clipboard -- 
 keymap("v", "Y", '"+y', nopts)
@@ -112,7 +120,7 @@ keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
 
-keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
+-- keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts) --treesitter提供的好用功能
 keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
 keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -161,10 +169,15 @@ vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentati
 -- Nvim-tree -- 
 vim.api.nvim_set_keymap("", "<C-n>", ":NvimTreeToggle<cr>", {})
 
+-- symbols-outline --
+keymap("n", "T", ":SymbolsOutlineOpen<CR>", opts)
+
+-- undotree -- 
+vim.keymap.set("n", "<F7>", require('undotree').toggle, opts)
 
 -- Comment -- 
-keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
+-- keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+-- keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
 
 -- Telescope -- 
 -- vim.api.nvim_set_keymap(

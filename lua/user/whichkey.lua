@@ -89,22 +89,22 @@ local m_opts = {
 }
 
 local m_mappings = {
-  a = { "<cmd>silent BookmarkAnnotate<cr>", "Annotate" },
+  a = { "<cmd>silent BookmarkShowAll<cr>", "Annotate" },
   c = { "<cmd>silent BookmarkClear<cr>", "Clear" },
-  b = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
-  m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+  x = { "<cmd>silent BookmarkClearAll<cr>", "Clear All" },
+  m = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
+  i = { "<cmd>silent BookmarkAnnotate<cr>", "Toggle Annotate" },
+  -- m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
   ["."] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
   [","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
   l = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },
-  j = { "<cmd>silent BookmarkNext<cr>", "Next" },
+  n = { "<cmd>silent BookmarkNext<cr>", "Next" },
+  N = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
   s = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
-  k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
-  S = { "<cmd>silent BookmarkShowAll<cr>", "Prev" },
   -- s = {
   --   "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
   --   "Show",
   -- },
-  x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
   [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
 
@@ -168,11 +168,11 @@ local mappings = {
 
   s = {
     name = "Session",
-    s = { "<cmd>SaveSession<cr>", "Save" },
-    r = { "<cmd>RestoreSession<cr>", "Restore" },
-    x = { "<cmd>DeleteSession<cr>", "Delete" },
-    f = { "<cmd>Autosession search<cr>", "Find" },
-    d = { "<cmd>Autosession delete<cr>", "Find Delete" },
+    s = { "<cmd>save_current_session<cr>", "Save" },
+    r = { "<cmd>load_session<cr>", "Session" },
+    l = { "<cmd>load_last_session<cr>", "Last Session" },
+    c = { "<cmd>load_current_dir_session<cr>", "Current Dir" },
+    d = { "<cmd>delete_session<cr>", "Find Delete" },
     -- a = { ":SaveSession<cr>", "test" },
     -- a = { ":RestoreSession<cr>", "test" },
     -- a = { ":RestoreSessionFromFile<cr>", "test" },

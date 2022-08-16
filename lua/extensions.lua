@@ -123,6 +123,9 @@ run = "./install.sh" }
   use "MattesGroeger/vim-bookmarks"
   use "lfv89/vim-interestingwords"
 
+  -- undotree
+  use "jiaoshijie/undotree"
+
   -- Fuzzy Finder/Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
@@ -223,7 +226,7 @@ run = "./install.sh" }
   use "andymass/vim-matchup"
   use "folke/zen-mode.nvim"
   -- use "Pocco81/true-zen.nvim"
-  use "karb94/neoscroll.nvim"
+  -- use "karb94/neoscroll.nvim"
   -- use "junegunn/vim-slash"
 
   -- Motion
