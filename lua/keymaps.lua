@@ -99,7 +99,7 @@ keymap("n", "<leader>d", ":Bdelete<CR>", opts)
 -- keymap("v", "P", '"_dP', opts)
 
 -- Visual Block --
--- Move text up and down
+-- Move text up and down, it looks cool, but not a frequent op
 -- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 -- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
@@ -115,7 +115,7 @@ keymap("n", "<leader>d", ":Bdelete<CR>", opts)
 -- Custom
 -- keymap("n", "<c-h>", "<cmd>nohlsearch<cr>", opts)
 -- NOTE: the fact that tab and ctrl-i are the same is stupid
--- keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
@@ -170,7 +170,7 @@ vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentati
 vim.api.nvim_set_keymap("", "<C-n>", ":NvimTreeToggle<cr>", {})
 
 -- symbols-outline --
-keymap("n", "T", ":SymbolsOutlineOpen<CR>", opts)
+keymap("n", "T", ":SymbolsOutlineOpen<CR>", {})
 
 -- undotree -- 
 vim.keymap.set("n", "<F7>", require('undotree').toggle, opts)
@@ -194,12 +194,14 @@ vim.keymap.set("n", "<F7>", require('undotree').toggle, opts)
 -- )
 -- vim.api.nvim_set_keymap("n", "<tab>", "<cmd>lua require('telescope.builtin').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>", opts)
 
+--[[
 vim.api.nvim_set_keymap(
   "n",
   "<tab>",
   "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
   opts
 )
+--]]
 vim.api.nvim_set_keymap(
   "n",
   "<s-tab>",

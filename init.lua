@@ -60,4 +60,4 @@ require "user.harpoon"
 require "user.vim-slash"
 require "user.bufferline"
 -- require "user.luadev"
-require("user.undotree")
+require "user.undotree"

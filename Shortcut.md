@@ -18,10 +18,15 @@
 针对snippest的参数可以通过<TAB>跳转到下一个待修改的位置
 
 # lsp
+# whichkey
+|Button|Function|
+|leader+l+f|format|
+
 ## handlers
 提供类似于coc.nvim的跳转等功能.
 |Button|Function|
 |gl|show left icon what it means|
+
 
 # browse
 browser quick start!

@@ -22,3 +22,12 @@ bufferline is depend on nvim-web-devicons and vim-bbye(Improve the comfort of us
 
 ## whichkey
 A series of comprehensive shortcut keys are set to distinguish and guide with different opts settings(opts, vopts, m_opts).
+
+# null-ls
+provides formatting.
+There are some interesting functions which can be found at null-ls/builtins:
+1. code_actions
+2. completion
+3. diagnostics
+4. formatting
+5. hover 悬停显示功能

@@ -9,7 +9,7 @@ local luadev = require("lua-dev").setup({
     types = true,
     plugins = true,
   },
-  runtime_path = false,
+  runtime_path = true,
   lspconfig = {
     cmd = {"lua-language-server"}
   },

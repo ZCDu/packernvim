@@ -13,7 +13,7 @@ vim.g.symbols_outline = {
 		goto_location = "<Cr>",
 		focus_location = "o",
 		hover_symbol = "<C-space>",
-		toggle_preview = "T",
+		toggle_preview = "N",
 		rename_symbol = "r",
 		code_actions = "a",
 	},
