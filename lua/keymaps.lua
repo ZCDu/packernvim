@@ -170,7 +170,7 @@ vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentati
 vim.api.nvim_set_keymap("", "<C-n>", ":NvimTreeToggle<cr>", {})
 
 -- symbols-outline --
-keymap("n", "T", ":SymbolsOutlineOpen<CR>", {})
+keymap("n", "T", ":SymbolsOutline<CR>", {})
 
 -- undotree -- 
 vim.keymap.set("n", "<F7>", require('undotree').toggle, opts)
