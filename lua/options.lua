@@ -63,6 +63,8 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
 -- Auto change directory to current dir
 vim.cmd [[autocmd BufEnter * silent! lcd %:p:h]]
+-- Open at last position you left last time
+vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 
 
 vim.filetype.add {
