@@ -34,3 +34,7 @@ There are some interesting functions which can be found at null-ls/builtins:
 
 # symbol-outline 
 It cannot work, but vista is also not work well. So wait for it repair!!
+
+# possession
+session manage. It need input a session name to save. Use Possesion to open the code.
+

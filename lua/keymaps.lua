@@ -117,7 +117,7 @@ keymap("n", "<leader>d", ":Bdelete<CR>", opts)
 -- NOTE: the fact that tab and ctrl-i are the same is stupid
 keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
+-- keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
 
 keymap("n", "<F8>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts) --treesitter提供的好用功能
@@ -171,6 +171,11 @@ vim.api.nvim_set_keymap("", "<C-n>", ":NvimTreeToggle<cr>", {})
 
 -- symbols-outline --
 keymap("n", "T", ":SymbolsOutline<CR>", {})
+
+-- possession --
+keymap("n", "<F2>", ":PossessionSave ", opts)
+keymap("n", "<F3>", ":PossessionList<cr>", opts)
+keymap("n", "<F4>", ":PossessionDelete ", opts)
 
 -- undotree -- 
 vim.keymap.set("n", "<F7>", require('undotree').toggle, opts)

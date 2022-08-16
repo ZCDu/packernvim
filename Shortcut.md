@@ -110,8 +110,22 @@ telescope需要定义两种行为，一种是在telescope内部使用的命令�
 |leader+f+k|查找Telescope的所有keymap|whichkey|
 |leader+f+C|查找telescope的所有命令|whichkey|
 
-# session-manager
-对应vim-session，管理会话, 但是这个seesion很拉呀，不能保存工作区的。只是vim-session不兼容了，难受。
+# possession
+对应vim-session，管理会话。
+在这个插件的配置过程中，出现了文件路径的需求，需要将seession保存到这个位置，通过`vim.fn.stdpath('data')`进行指定，这个位置对应的是`.local/share/nvim`.
+功能：
+1. PossessionSave
+2. PossessionLoad
+3. PossessionClose
+4. PossessionDelete
+5. PossessionShow
+6. PossessionList
+7. PossessionMigrate ：Seession迁移，将vim保存的session迁移到这个插件下管理，用的不多的
 |Button|Function|Path|
-|leader+s|srxfd|whichkey|
+|leader+f+p|Telescope只支持集成List|whichkey|
+|leader+s|srhcdl|whichkey|
+|F2|保存文件需要输入保存名称|keymap|
+|F3|展示所有session|keymap|
+|F4|删除指定名称的session|keymap|
+
 
