@@ -91,3 +91,6 @@ $ chmod +x ~/.local/bin/rust-analyzer
 ```
 ## session manage
 Use possession. A folder named 'possession' need create at .local/share/nvim/ . 
+TODO: This plug-in still has some shortcomings. For the functions with input requirements, there is no pop-up prompt. I hope it can be improved.
+
+It is better to use the pop-up window to complete the operation of the specified parameter for the part that needs to be input

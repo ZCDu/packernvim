@@ -14,6 +14,10 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- quick open the neovim configure
+keymap("n", "<leader>rc", ":e ~/.config/nvim/lua/keymaps.lua <cr>", nopts)
+keymap("n", "<leader>re", ":e ~/.config/nvim/lua/extensions.lua <rc>", nopts)
+
 -- Remove default map
 keymap("n", "s", "<nop>", {})
 keymap("n", "K", "<nop>", {})
@@ -29,7 +33,7 @@ keymap("n", "J", "<nop>", {})
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-w>", "<C-w>w", nopts)
+-- keymap("n", "<C-w>", "<C-w>w", nopts)
 keymap("n", "<C-k>", "<C-w>k", nopts)
 keymap("n", "<C-j>", "<C-w>j", nopts)
 keymap("n", "<C-h>", "<C-w>h", nopts)
@@ -102,8 +106,49 @@ keymap("n", "<leader>d", ":Bdelete<CR>", opts)
 -- Move text up and down, it looks cool, but not a frequent op
 -- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 -- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
--- keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
--- keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Markdownpre --
+keymap("n", "R", "<nop>", {})
+vim.cmd [[
+noremap R :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+	exec "w"
+	if &filetype == 'c'
+		exec "!g++ % -o %<"
+		exec "!time ./%<"
+	elseif &filetype == 'cpp'
+		set splitbelow
+		exec "!g++ -std=c++11 % -Wall -o %<"
+		:sp
+		:res -15
+		:term ./%<
+	elseif &filetype == 'java'
+		exec "!javac %"
+		exec "!time java %<"
+	elseif &filetype == 'sh'
+		:!time bash %
+	elseif &filetype == 'python'
+		set splitbelow
+		:sp
+		:term python3 %
+	elseif &filetype == 'html'
+		silent! exec "!".g:mkdp_browser." % &"
+	elseif &filetype == 'markdown'
+		exec "MarkdownPreview"
+	elseif &filetype == 'tex'
+		silent! exec "VimtexStop"
+		silent! exec "VimtexCompile"
+	elseif &filetype == 'dart'
+		CocCommand flutter.run
+	elseif &filetype == 'go'
+		set splitbelow
+		:sp
+		:term go run %
+	endif
+endfunc
+]]
 
 -- Terminal --
 -- Better terminal navigation
@@ -128,9 +173,9 @@ keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 keymap("n", "<C-p>", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 -- keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts) 
+keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 
-keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts) -- get a float terminal, but have a error
+-- keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts) -- get a float terminal, but have a error
 -- keymap("n", "<C-\\>", "<cmd>vsplit<cr>", opts)
 -- vim.cmd[[nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]
 -- vim.cmd[[nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]
