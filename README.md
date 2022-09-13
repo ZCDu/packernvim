@@ -1,5 +1,5 @@
 # My Neovim Config
-
+WARN: this version is not work at other device.
 ## Try out this config
 
 Make sure to remove or move your current `nvim` directory
