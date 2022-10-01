@@ -63,9 +63,10 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim" -- lsp support plugin. The list of parameters to be continued is displayed below the input.
   use "SmiteshP/nvim-navic" -- support lualine, show current code environment
   -- outline 
-  use {"simrat39/symbols-outline.nvim", commit = "13e89b6349f51bd305a2af9db84c8490aee94c82"} -- subsitute for tagbar
+  -- use {"simrat39/symbols-outline.nvim", commit = "13e89b6349f51bd305a2af9db84c8490aee94c82"} -- subsitute for tagbar
   -- use "liuchengxu/vista.vim" -- above is not work
   -- use "stevearc/aerial.nvim"
+  use {"stevearc/aerial.nvim", config = function() require('aerial').setup() end}
 
   use "b0o/SchemaStore.nvim" -- used for SchemaStore
   -- use "github/copilot.vim"

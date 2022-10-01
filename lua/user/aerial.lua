@@ -1,44 +1,40 @@
-
-local ok, aerial = pcall(require, "aerial")
-if not ok then
-  vim.notify "Could not load aerial"
-  return
-end
-
-aerial.setup {
+-- Call the setup function to change the default behavior
+require("aerial").setup({
   -- Priority list of preferred backends for aerial.
   -- This can be a filetype map (see :help aerial-filetype-map)
-  backends = { "lsp", "treesitter", "markdown" },
+  backends = { "treesitter", "lsp", "markdown" },
 
   layout = {
     -- These control the width of the aerial window.
     -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     -- min_width and max_width can be a list of mixed types.
     -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
-    max_width = nil,
+    max_width = { 40, 0.2 },
     width = nil,
-    min_width = { 25, 0.2 },
+    min_width = 10,
 
-    -- Enum: prefer_right, prefer_left, right, left, float
     -- Determines the default direction to open the aerial window. The 'prefer'
     -- options will open the window in the other direction *if* there is a
     -- different buffer in the way of the preferred direction
+    -- Enum: prefer_right, prefer_left, right, left, float
     default_direction = "prefer_right",
 
-    -- Enum: edge, group, window
+    -- Determines where the aerial window will be opened
     --   edge   - open aerial at the far right/left of the editor
-    --   group  - open aerial to the right/left of the group of windows containing the current buffer
     --   window - open aerial to the right/left of the current window
     placement = "window",
   },
 
-  -- Enum: persist, close, auto, global
-  --   persist - aerial window will stay open until closed
-  --   close   - aerial window will close when original file is no longer visible
-  --   auto    - aerial window will stay open as long as there is a visible
-  --             buffer to attach to
-  --   global  - same as 'persist', and will always show symbols for the current buffer
-  close_behavior = "auto",
+  -- Determines how the aerial window decides which buffer to display symbols for
+  --   window - aerial window will display symbols for the buffer in the window from which it was opened
+  --   global - aerial window will display symbols for the current window
+  attach_mode = "window",
+
+  -- List of enum values that configure when to auto-close the aerial window
+  --   unfocus       - close aerial when you leave the original source window
+  --   switch_buffer - close aerial when you change buffers in the source window
+  --   unsupported   - close aerial when attaching to a buffer that has no symbol source
+  close_automatic_events = {},
 
   -- Set to false to remove the default keybindings for the aerial buffer
   default_bindings = true,
@@ -63,7 +59,6 @@ aerial.setup {
     "Struct",
   },
 
-  -- Enum: split_width, full_width, last, none
   -- Determines line highlighting mode when multiple splits are visible.
   -- split_width   Each open window will have its cursor location marked in the
   --               aerial buffer. Each line will only be partially highlighted
@@ -79,7 +74,7 @@ aerial.setup {
   highlight_closest = true,
 
   -- Highlight the symbol in the source buffer when cursor is in the aerial win
-  highlight_on_hover = true,
+  highlight_on_hover = false,
 
   -- When jumping to a symbol, highlight the line for this many ms.
   -- Set to false to disable
@@ -94,7 +89,7 @@ aerial.setup {
   icons = {},
 
   -- Control which windows and buffers aerial should ignore.
-  -- If close_behavior is "global", focusing an ignored window/buffer will
+  -- If attach_mode is "global", focusing an ignored window/buffer will
   -- not cause the aerial window to update.
   -- If open_automatic is true, focusing an ignored window/buffer will not
   -- cause an aerial window to open.
@@ -188,7 +183,7 @@ aerial.setup {
     -- Controls border appearance. Passed to nvim_open_win
     border = "rounded",
 
-    -- Enum: cursor, editor, win
+    -- Determines location of floating window
     --   cursor - Opens float on top of the cursor
     --   editor - Opens float centered in the editor
     --   win    - Opens float centered in the window
@@ -231,5 +226,4 @@ aerial.setup {
     -- How long to wait (in ms) after a buffer change before updating
     update_delay = 300,
   },
-}
-
+})

@@ -1,5 +1,7 @@
+local Path = require('plenary.path')
 local status_ok, session_manager = pcall(require, "session_manager")
 if not status_ok then
+  vim.notify("session_manager not found!")
 	return
 end
 
@@ -13,18 +15,19 @@ session_manager.setup({
   autosave_ignore_not_normal = true, -- Plugin will not save a session when no writable and listed buffers are opened.
 	autosave_ignore_filetype = {
 		'gitcommit',
-	}
+	},
   autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
 	max_path_length = 80,
 })
 
 -- let nvim-tree open if last is opened
-vim.cmd([[
-	augroup _open_nvim_tree
-		autocmd! * <buffer>
-		autocmd SessionLoadPost * silent! lua require("nvim-tree").toggle(false, true)
-	augroup end
-]])
+-- vim.cmd([[
+-- 	augroup _open_nvim_tree
+-- 		autocmd! * <buffer>
+-- 		autocmd SessionLoadPost * silent! lua require("nvim-tree").toggle(false, true)
+-- 	augroup end
+-- ]])
+
 
 local tele_status_ok, telescope = pcall(require, "telescope")
 if not tele_status_ok then
