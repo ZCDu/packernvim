@@ -18,6 +18,7 @@ null_ls.setup {
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
+    null_ls.builtins.diagnostics.pylint,
     -- formatting.stylua,
     -- formatting.shfmt,
     -- formatting.google_java_format,

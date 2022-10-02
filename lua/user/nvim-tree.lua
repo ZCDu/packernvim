@@ -123,7 +123,7 @@ nvim_tree.setup {
   },
   view = { -- 视图配置
     width = 30,
-    height = 30,
+    -- height = 30,
     hide_root_folder = false,
     side = "left",
     -- auto_resize = true,
