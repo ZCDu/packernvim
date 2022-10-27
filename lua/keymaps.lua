@@ -164,6 +164,7 @@ keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 -- keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
 keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
+keymap("n", "<leader>n", "<cmd>Telescope find_files<CR>", opts)
 
 keymap("n", "<F8>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts) --treesitter提供的好用功能
 -- keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts) -- 显示编译的树结构，看不懂

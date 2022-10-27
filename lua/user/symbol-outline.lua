@@ -16,6 +16,8 @@ vim.g.symbols_outline = {
 		toggle_preview = "K",
 		rename_symbol = "r",
 		code_actions = "a",
+    fold_all = "W",
+    unfold = "w",
 	},
 	lsp_blacklist = {},
 	symbol_blacklist = {},

@@ -64,6 +64,7 @@ return packer.startup(function(use)
   use "SmiteshP/nvim-navic" -- support lualine, show current code environment
   -- outline 
   use {"simrat39/symbols-outline.nvim", commit = "13e89b6349f51bd305a2af9db84c8490aee94c82"} -- subsitute for tagbar
+  --use 'simrat39/symbols-outline.nvim'
   -- use "liuchengxu/vista.vim" -- above is not work
   -- use "stevearc/aerial.nvim"
   -- use {"stevearc/aerial.nvim", config = function() require('aerial').setup() end}
@@ -88,7 +89,8 @@ return packer.startup(function(use)
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- diagnostics like rust debug, cool!!!
 
   -- Completion
-  use "christianchiarulli/nvim-cmp" -- copy from hrsh7th
+  -- use "christianchiarulli/nvim-cmp" -- copy from hrsh7th
+  use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions

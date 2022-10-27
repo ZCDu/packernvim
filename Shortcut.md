@@ -95,6 +95,7 @@ tagbar的代替品
 # telescope
 telescope需要定义两种行为，一种是在telescope内部使用的命令，定义在telescope配置中，另一种则是启动telescope的命令，定义在whichkey中。
 |Button|Function|Path|
+|leader+n|find files|keymap|
 |leader+f+b|切换分支|whichkey|
 |leader+f+c|切换颜色主题|whichkey|
 |leader+f+f|以当前文件作为根，查找文件名|whichkey|
