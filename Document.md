@@ -33,8 +33,20 @@ There are some interesting functions which can be found at null-ls/builtins:
 5. hover 悬停显示功能
 
 # symbol-outline 
-It cannot work, but vista is also not work well. So wait for it repair!!
+指定的版本是可以运行的。
 
 # possession
 session manage. It need input a session name to save. Use Possesion to open the code.
 
+# tree-sitter
+需要安装tree-sitter cli. 不然会报错。
+通过cargo进行安装
+```shell
+cargo install tree-sitter-cli
+```
+也可以通过npm进行安装：
+```shell
+npm install tree-sitter-cli
+```
+## 来源
+[Tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/blob/master/cli/README.md)
