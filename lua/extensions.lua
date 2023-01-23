@@ -90,7 +90,7 @@ return packer.startup(function(use)
 
   -- Completion
   -- use "christianchiarulli/nvim-cmp" -- copy from hrsh7th
-  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/nvim-cmp" -- completions function
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -109,7 +109,10 @@ run = "./install.sh" }
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Syntax/Treesitter
-  use "nvim-treesitter/nvim-treesitter"
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
@@ -130,7 +133,7 @@ run = "./install.sh" }
   use "MattesGroeger/vim-bookmarks"
   use "lfv89/vim-interestingwords"
 
-  -- undotree
+  -- undotree : record of undo op
   use "jiaoshijie/undotree"
   -- use "mbbill/undotree"
 

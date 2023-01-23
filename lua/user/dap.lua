@@ -1,10 +1,12 @@
 local dap_status_ok, dap = pcall(require, "dap")
 if not dap_status_ok then
+  vim.notify("dap op is not running")
   return
 end
 
 local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
+  vim.notify("dap ui is not work")
   return
 end
 

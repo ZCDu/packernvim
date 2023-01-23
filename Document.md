@@ -39,8 +39,7 @@ There are some interesting functions which can be found at null-ls/builtins:
 session manage. It need input a session name to save. Use Possesion to open the code.
 
 # tree-sitter
-需要安装tree-sitter cli. 不然会报错。
-通过cargo进行安装
+使得nvim支持tree-sitter，不需要额外安装tree-sitter
 ```shell
 cargo install tree-sitter-cli
 ```
