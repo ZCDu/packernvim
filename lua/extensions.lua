@@ -95,7 +95,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp" -- 统合不同的代码补全能力, 如snippest或lsp
+  use "hrsh7th/cmp-nvim-lsp" -- lsp completions
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
   -- use "zbirenbaum/copilot-cmp"

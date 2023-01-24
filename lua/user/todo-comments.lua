@@ -12,6 +12,7 @@ local warning_orange = "#ff8800"
 local hint_blue = "#4FC1FF"
 local perf_purple = "#7C3AED"
 local note_green = '#10B981'
+local light_brown = '#957C54'
 
 todo_comments.setup {
   signs = true, -- show icons in the signs column
@@ -29,6 +30,7 @@ todo_comments.setup {
     WARN = { icon = icons.diagnostics.Warning, color = warning_orange, alt = { "WARNING", "XXX" } },
     PERF = { icon = icons.ui.Dashboard, color = perf_purple, alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = icons.ui.Note, color = note_green, alt = { "INFO" } },
+    LIGHT = {icon = icons.ui.Lightbulb, color = light_brown},
   },
   -- merge_keywords = true, -- when true, custom keywords will be merged with the defaults
   -- highlighting of the line containing the todo comment
