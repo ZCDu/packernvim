@@ -1,12 +1,13 @@
 # My Neovim Config
-WARN: this version is not work at other device.
+WARN: 本项目有前置依赖，具体可以查看lunarvim的依赖，毕竟这个项目来源于Lunarvim的贡献者[ChristianChiarulli](git@github.com:ChristianChiarulli/nvim.git)的neovim配置。
+由于lunarvim只提供了基础的配置，像是lastplace，undotree等等很多好用的插件都需要自己加装, 虽然有详细的文档但是在别人的封装上加东西还是麻烦的，
+还需要修改自己的键位配置。
+需要注意几点：
+1. 本配置依赖于nerd fonts字体，推荐使用Hack Nerd Fonts
+2. node可能会出现权限的问题，这里建议使用nvm来安装nodejs，多版本还能避免这种奇怪的问题
 ## Try out this config
 
 Make sure to remove or move your current `nvim` directory
-
-```sh
-git clone git@github.com:ChristianChiarulli/nvim.git ~/.config/nvim
-```
 
 Run `nvim` and wait for the plugins to be installed
 

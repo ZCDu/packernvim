@@ -80,6 +80,7 @@ keymap("v", "Y", '"+y', nopts)
 keymap("v", "P", '"+p', nopts)
 
 -- Naviagate buffers -- 
+keymap("n", "<leader>j", ":BufferLinePick<CR>", opts)
 keymap("n", "<leader>b", ":bnext<CR>", opts)
 keymap("n", "<leader>v", ":bprevious<CR>", opts)
 keymap("n", "<leader>d", ":Bdelete<CR>", opts)
