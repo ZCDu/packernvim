@@ -18,7 +18,7 @@ null_ls.setup {
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
-    null_ls.builtins.diagnostics.pylint,
+    -- null_ls.builtins.diagnostics.pylint,
     -- formatting.stylua,
     -- formatting.shfmt,
     -- formatting.google_java_format,
@@ -26,15 +26,7 @@ null_ls.setup {
     -- diagnostics.shellcheck,
   },
 }
---[[
-require("null-ls").setup({
-    sources = {
-        require("null-ls").builtins.formatting.stylua,
-        require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.completion.spell,
-    },
-})
---]]
+
 
 local unwrap = {
   method = null_ls.methods.DIAGNOSTICS,

@@ -33,12 +33,17 @@ end
 
 local compare = require "cmp.config.compare"
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- load frindly-snip
+require("luasnip.loaders.from_vscode").lazy_load()
+-- 自定义的代码片段导入
+--require("luasnip.loaders.from_vscode").load({ paths = {
+--  vim.fn.stdpath("config").."/my-snippets"
+--}})
 
--- local check_backspace = function()
---   local col = vim.fn.col "." - 1
---   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
--- end
+local check_backspace = function()
+  local col = vim.fn.col "." - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+end
 
 local check_backspace = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -103,6 +108,7 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = false },
+
     -- ["<Right>"] = cmp.mapping.confirm { select = true }, -- 右方向快速补全，恶心
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -136,11 +142,14 @@ cmp.setup {
       "s",
     }),
   },
+  -- 定义lsp提示的格式
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = kind_icons[vim_item.kind]
+      -- vim_item.kind = kind_icons[vim_item.kind]
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind], vim_item.kind)
+
 
       if entry.source.name == "cmp_tabnine" then
         vim_item.kind = icons.misc.Robot
@@ -167,18 +176,20 @@ cmp.setup {
       end
 
       -- NOTE: order matters
+      -- cmp提示中显示提示来源
       vim_item.menu = ({
-        nvim_lsp = "",
-        nvim_lua = "",
-        luasnip = "",
-        buffer = "",
-        path = "",
-        emoji = "",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[NVIM_LUA]",
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+        emoji = "[Emoji]",
       })[entry.source.name]
       return vim_item
     end,
   },
   -- at the same time, Determines the order of CMP display
+  -- 定义cmp补全的来源有哪些
   sources = {
     { name = "crates", group_index = 1 },
     --[[
@@ -246,18 +257,35 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
+  -- 定义cmp提示框的样式
+  -- 二级提示的为documentation，需要启动
   window = {
-    documentation = false,
-    -- documentation = {
-    --   border = "rounded",
-    --   winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-    -- },
+    -- documentation = false,
+    documentation = {
+      border = "rounded",
+      winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+    },
     completion = {
       border = "rounded",
       winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
     },
   },
+  -- 在进行cmp的时候，会使用幻影预先展示在cmp的位置上, 补全的提前展示
   experimental = {
     ghost_text = true,
   },
 }
+
+-- cmdline setup
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+cmp.setup.cmdline(":", {
+  sources = cmp.config.sources({
+    { name = 'cmdline' }
+  }, {
+    {name = 'path'}
+  })
+})

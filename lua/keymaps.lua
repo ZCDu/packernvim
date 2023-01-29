@@ -174,7 +174,7 @@ keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 keymap("n", "<C-p>", "<cmd>Telescope projects<cr>", opts)
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 -- keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<C-f>", "<cmd>ZenMode<cr>", opts) -- 专注模式
+keymap("n", "<C-x>", "<cmd>ZenMode<cr>", opts) -- 专注模式
 
 -- keymap("n", "-", ":lua require'lir.float'.toggle()<cr>", opts) -- get a float terminal, but have a error
 -- keymap("n", "<C-\\>", "<cmd>vsplit<cr>", opts)

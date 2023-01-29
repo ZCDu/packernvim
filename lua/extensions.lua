@@ -93,7 +93,7 @@ return packer.startup(function(use)
   use "hrsh7th/nvim-cmp" -- completions function
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions, 即ex命令的提示(冒号引导)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp" -- lsp completions
   use "hrsh7th/cmp-emoji"
