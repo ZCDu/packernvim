@@ -67,13 +67,14 @@ keymap("n", "<m-y>", ":tabclose<cr>", opts)
 keymap("n", "<m-\\>", ":tabonly<cr>", opts)
 
 -- vim-bookmarks --
-keymap("n", "mi", ":BookmarkAnnotate<cr>", {})
-keymap("n", "ma", ":BookmarkShowAll<cr>", {})
-keymap("n", "mc", ":BookmarkClear<cr>", {})
-keymap("n", "mx", ":BookmarkClearAll<cr>", {})
-keymap("n", "mm", ":BookmarkToggle<cr>", {})
-keymap("n", "mn", ":BookmarkNext<cr>", {})
-keymap("n", "mN", ":BookmarkPrev<cr>", {})
+-- these keymap change to whichkey, use m as prefix
+--keymap("n", "mi", ":BookmarkAnnotate<cr>", {})
+--keymap("n", "ma", ":BookmarkShowAll<cr>", {})
+--keymap("n", "mc", ":BookmarkClear<cr>", {})
+--keymap("n", "mx", ":BookmarkClearAll<cr>", {})
+--keymap("n", "mm", ":BookmarkToggle<cr>", {})
+--keymap("n", "mn", ":BookmarkNext<cr>", {})
+--keymap("n", "mN", ":BookmarkPrev<cr>", {})
 
 -- Copy to system clipboard -- 
 keymap("v", "Y", '"+y', nopts)
@@ -83,7 +84,8 @@ keymap("v", "P", '"+p', nopts)
 keymap("n", "<leader>j", ":BufferLinePick<CR>", opts)
 keymap("n", "<leader>b", ":bnext<CR>", opts)
 keymap("n", "<leader>v", ":bprevious<CR>", opts)
-keymap("n", "<leader>d", ":Bdelete<CR>", opts)
+-- change Bdelete to whichkey with leader+c
+-- keymap("n", "<leader>d", ":Bdelete<CR>", opts)
 -- bdelete will produce some errors, so, there use Bdelte. 
 -- Neovim distinguishes the functions of Bdelete and bdelete, former delte one buffer, latter will attempt to delete all cause error.
 

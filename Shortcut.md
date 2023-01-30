@@ -132,4 +132,4 @@ telescope需要定义两种行为，一种是在telescope内部使用的命令�
 # zenmode
 专注模式
 |Button|Function|where|
-|<C-f>|启动专注模式|keymaps|
+|<C-x>|启动专注模式|keymaps|

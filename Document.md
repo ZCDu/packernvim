@@ -21,7 +21,7 @@ Provides viewing of cache pool information.
 bufferline is depend on nvim-web-devicons and vim-bbye(Improve the comfort of use.)
 
 ## whichkey
-A series of comprehensive shortcut keys are set to distinguish and guide with different opts settings(opts, vopts, m_opts).
+A series of comprehensive shortcut keys are set to distinguish and guide with different opts settings(opts, vopts, m_opts). 通过配置，whichkey可以使用多种不同的引导键
 
 # null-ls
 provides formatting.
