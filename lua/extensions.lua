@@ -207,7 +207,7 @@ run = "./install.sh" }
   -- use {"rmagatti/auto-session", branch="dir-changed-fixes"}
   -- use "rmagatti/session-lens"
   use "Shatur/neovim-session-manager"
-  -- use "jedrzejboczar/possession.nvim"
+  use "jedrzejboczar/possession.nvim"
 
   -- Quickfix
   use "kevinhwang91/nvim-bqf"

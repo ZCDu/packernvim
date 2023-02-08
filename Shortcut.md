@@ -9,10 +9,10 @@
 |C-j|选择下一个item|
 |C-b|文档滑动|
 |C-f|文档滑动|
-|C-Space|补全|
 |m-o|补全|
 |C-c|打开或关闭float|
 |Tab|游览float|
+|C-c Tab|在多个luasnip填空上进行切换|
 |S-Tab|
 ## cmp-luasnip
 针对snippest的参数可以通过<TAB>跳转到下一个待修改的位置
