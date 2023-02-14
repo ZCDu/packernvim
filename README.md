@@ -5,6 +5,7 @@ WARN: 本项目有前置依赖，具体可以查看lunarvim的依赖，毕竟这
 需要注意几点：
 1. 本配置依赖于nerd fonts字体，推荐使用Hack Nerd Fonts
 2. node可能会出现权限的问题，这里建议使用nvm来安装nodejs，多版本还能避免这种奇怪的问题
+3. 需要在.local.share.nvim下创建undo文件夹，用于undotree，可能还需要其他的，在看吧
 ## Try out this config
 
 Make sure to remove or move your current `nvim` directory

@@ -58,6 +58,8 @@ TODO : what else?
 NOTE : adding a note
 FIX : this needs fixing
 WARNING ???
+LIT: method light point
+QES: assisted with NOTE, for question waitting to be solved
 
 todo-comment还能与telescope进行深度集成，方便进行查找对应的标签。
 ## 命令
