@@ -159,12 +159,14 @@ run = "./install.sh" }
   use "rcarriga/nvim-notify"
   use "stevearc/dressing.nvim"
   -- use "ghillb/cybu.nvim"
-  use "moll/vim-bbye"
+  use "moll/vim-bbye" -- Bdelete function
   use "lewis6991/impatient.nvim"
   use "lalitmee/browse.nvim"
 
   -- Registers
   -- use "tversteeg/registers.nvim"
+  -- multi cursor 
+  -- use "terryma/vim-multiple-cursors"
 
   -- Icon
   use "kyazdani42/nvim-web-devicons"
