@@ -64,3 +64,5 @@ require "user.vim-slash"
 require "user.bufferline"
 -- require "user.luadev"
 require "user.undotree"
+-- fcitx5 auto language change 
+require "fcitx5"

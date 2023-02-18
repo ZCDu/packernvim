@@ -215,7 +215,7 @@ local mappings = {
     f = { "<cmd>Telescope find_files<cr>", "Find files" },
     t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     s = { "<cmd>Telescope grep_string<cr>", "Find String" },
-    h = { "<cmd>Telescope help_tags<cr>", "Help" },
+    g = { "<cmd>Telescope help_tags<cr>", "Help" },
     H = { "<cmd>Telescope highlights<cr>", "Highlights" },
     i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
     l = { "<cmd>Telescope resume<cr>", "Last Search" },
@@ -224,7 +224,7 @@ local mappings = {
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
-    g = { "<cmd>TodoTelescope<cr>", "TODO" },
+    h = { "<cmd>TodoTelescope<cr>", "TODO" },
   },
 
   g = {
