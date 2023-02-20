@@ -51,6 +51,9 @@ keymap("n", "su", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", {})
 keymap("n", "se", ":set splitbelow<CR>:split<CR>", {})
 keymap("n", "si", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", {})
 keymap("n", "sn", ":set splitright<CR>:vsplit<CR>", {})
+--  配合ctrl+w+x进行两个panel的位置调换，效率max!!!
+
+
 -- Resize splits with arrow keys
 keymap("n", "<C-Up>", ":resize +5<CR>", nopts)
 keymap("n", "<C-Down>", ":resize -5<CR>", nopts)
