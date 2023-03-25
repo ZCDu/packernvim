@@ -135,3 +135,6 @@ telescope需要定义两种行为，一种是在telescope内部使用的命令�
 专注模式
 |Button|Function|where|
 |<C-x>|启动专注模式|keymaps|
+
+# toggleterm
+当前配置了3种模式，float、vertical、horizontal，使用alt+数字启动，可以配置更个性化的方式

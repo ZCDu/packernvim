@@ -88,6 +88,9 @@ return packer.startup(function(use)
   -- use "simrat39/inlay-hints.nvim"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- diagnostics like rust debug, cool!!!
 
+  -- tmux 
+  use "christoomey/vim-tmux-navigator"
+
   -- Completion
   -- use "christianchiarulli/nvim-cmp" -- copy from hrsh7th
   use "hrsh7th/nvim-cmp" -- completions function
@@ -175,7 +178,7 @@ run = "./install.sh" }
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
   -- use "theHamsta/nvim-dap-virtual-text"
-  -- use "Pocco81/DAPInstall.nvim"
+  -- use "Pocco81/DAPInstall.nvim" -- 提供DIInstall功能
 
   -- Tabline
   use "akinsho/bufferline.nvim"

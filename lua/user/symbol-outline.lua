@@ -23,7 +23,8 @@ local opts = {
 		rename_symbol = "r",
 		code_actions = "a",
     fold_all = "W",
-    unfold = "w",
+    unfold = "L",
+    fold = "H"
 	},
 	lsp_blacklist = {},
 	symbol_blacklist = {},

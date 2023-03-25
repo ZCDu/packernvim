@@ -49,3 +49,6 @@ npm install tree-sitter-cli
 ```
 ## 来源
 [Tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/blob/master/cli/README.md)
+
+# toggleterm
+能够实现在neovim中按指定的要求打开终端，具体配置查看toggleterm的配置文档, 但是当前不能很好的vim进行控制的切换，需要配置一下
