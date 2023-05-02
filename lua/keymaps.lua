@@ -232,6 +232,10 @@ keymap("n", "<F4>", ":PossessionDelete ", opts)
 -- undotree -- 
 vim.keymap.set("n", "<F7>", require('undotree').toggle, opts)
 
+-- copilot -- 
+vim.cmd [[ imap <silent><script><expr> <C-f> copilot#Accept("\<CR>") ]]
+vim.cmd [[ let g:copilot_no_tab_map = v:true ]]
+
 -- Comment -- 
 -- keymap("n", "<m-/>", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 -- keymap("x", "<m-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)

@@ -27,6 +27,9 @@
 |Button|Function|
 |gl|show left icon what it means|
 
+# copilot
+改变了原始的TAB按键映射为C-f。
+
 
 # browse
 browser quick start!

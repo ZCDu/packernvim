@@ -70,7 +70,7 @@ return packer.startup(function(use)
   -- use {"stevearc/aerial.nvim", config = function() require('aerial').setup() end}
 
   use "b0o/SchemaStore.nvim" -- used for SchemaStore
-  -- use "github/copilot.vim"
+  use "github/copilot.vim"
   --[[
   use {
     "zbirenbaum/copilot.lua",
@@ -91,12 +91,28 @@ return packer.startup(function(use)
   -- tmux 
   use "christoomey/vim-tmux-navigator"
 
+  -- noice.nvim
+  -- Packer
+  use({
+    "folke/noice.nvim",
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+      }
+  })
+
+
+
   -- Completion
   -- use "christianchiarulli/nvim-cmp" -- copy from hrsh7th
   use "hrsh7th/nvim-cmp" -- completions function
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions, 即ex命令的提示(冒号引导)
+  -- use "hrsh7th/cmp-cmdline" -- cmdline completions, 即ex命令的提示(冒号引导)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp" -- lsp completions
   use "hrsh7th/cmp-emoji"

@@ -66,3 +66,4 @@ require "user.bufferline"
 require "user.undotree"
 -- fcitx5 auto language change 
 require "fcitx5"
+require "noice"

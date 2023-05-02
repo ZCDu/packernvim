@@ -125,6 +125,7 @@ else
       Function = " ",
       Constructor = " ",
       Field = " ",
+      Copilot = " ",
       Variable = " ",
       Class = " ",
       Interface = " ",
